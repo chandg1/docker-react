@@ -1,0 +1,16 @@
+# telling that we need a super user permission to run this below command.
+sudo: required
+
+# it will install docker in travis.
+services:
+  - docker
+
+#before we start testing telling that we need to run this step so that we can start testing..
+before_install: 
+ - docker build -t react -f Dockerfile.dev .
+
+script:
+ - docker run -e ci=true react npm run test
+
+
+
