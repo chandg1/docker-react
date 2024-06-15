@@ -5,7 +5,7 @@ sudo: required
 services:
   - docker
 
-#before we start testing telling that we need to run this step so that we can start testing..
+#before we start testing telling that we need to run this step so that we can start testing...
 before_install: 
  - docker build -t react -f Dockerfile.dev .
 
