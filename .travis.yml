@@ -9,8 +9,10 @@ services:
 before_install: 
  - docker build -t react -f Dockerfile.dev .
 
+#runing the test cases
 script:
  - docker run react npm run test
+
 
 
 
