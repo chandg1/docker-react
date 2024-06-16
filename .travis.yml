@@ -10,7 +10,7 @@ before_install:
  - docker build -t react -f Dockerfile.dev .
 
 #runing the test cases.
-#note: --watchAll=false --forceExit add this script in package.json to exit from CLI 
+#note: --watchAll=false --forceExit add this script in package.json to exit from CLI.
 script:
  - docker run react npm run test
  
