@@ -14,7 +14,7 @@ before_install:
 script:
  - docker run react npm run test
 
-#deployment
+#deployment.
 deploy:
   procider: elasticbeanstalk
   region: "ap-south-1"
