@@ -10,11 +10,19 @@ before_install:
  - docker build -t react -f Dockerfile.dev .
 
 #runing the test cases.
-#note: --watchAll=false --forceExit add this script in package.json to exit from CLI.
+#note: --watchAll=false --forceExit add this script in package.json to exit from CLI 
 script:
  - docker run react npm run test
- 
 
-
-
-
+#deployment
+deploy:
+  procider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "frontend"
+  env: "Frontend-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-381492171266"
+  bucket_path: "frontend"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY  
